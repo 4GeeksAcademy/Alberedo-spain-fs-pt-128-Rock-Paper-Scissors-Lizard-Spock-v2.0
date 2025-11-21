@@ -1,7 +1,5 @@
 import "bootstrap";
 import "./style.css";
-
-
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
@@ -38,7 +36,6 @@ const play = (userChoise) => {
   else {
     console.log("Lo siento, has perdido...");
     document.getElementById("result").innerHTML = "💀¡¡Perdistes!!💀";
-
   }
 }
 
@@ -53,29 +50,33 @@ document.getElementById("rock").addEventListener("click", function () {
 document.getElementById("paper").addEventListener("click", function () {
   document.getElementById("userChoise").innerHTML = "paper";
   randomChoise()
-  document.getElementById("computerChoise").innerHTML = computerChoise;
   play("paper")
+  document.getElementById("computerChoise").innerHTML = computerChoise;
+  document.getElementById("resultDiv").classList.remove("d-none")
 });
 
 document.getElementById("scissors").addEventListener("click", function () {
   document.getElementById("userChoise").innerHTML = "scissors";
-  play("scissors")
   randomChoise()
+  play("scissors")
   document.getElementById("computerChoise").innerHTML = computerChoise;
+  document.getElementById("resultDiv").classList.remove("d-none")
 });
 
 document.getElementById("lizard").addEventListener("click", function () {
   document.getElementById("userChoise").innerHTML = "lizard";
-  play("lizard")
   randomChoise()
+  play("lizard")
   document.getElementById("computerChoise").innerHTML = computerChoise;
+  document.getElementById("resultDiv").classList.remove("d-none")
 });
 
 document.getElementById("spock").addEventListener("click", function () {
   document.getElementById("userChoise").innerHTML = "spock";
-  play("spock")
   randomChoise()
+  play("spock")
   document.getElementById("computerChoise").innerHTML = computerChoise;
+  document.getElementById("resultDiv").classList.remove("d-none")
 });
 
 
