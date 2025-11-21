@@ -28,6 +28,7 @@ function randomChoise() {
 const play = (userChoise) => {
   if (userChoise === computerChoise) {
     console.log("Habeis tenido un empate! Vuelve a intentarlo");
+    document.getElementById("result").innerHTML = "¡¡Empate!!  Pulsa otro botón para jugar la revancha";
   }
   else if (rules[userChoise].includes(computerChoise)) {
     console.log("Enhorabuena! Ganastes!")
