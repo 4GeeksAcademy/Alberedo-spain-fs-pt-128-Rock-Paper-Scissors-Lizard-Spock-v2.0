@@ -1,22 +1,16 @@
-import "bootstrap";
-import "./style.css";
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
 
-
-
-const choises = ["rock", "paper", "scissors", "lizard", "spock"]
+const choises = ["piedra", "papel", "tijeras", "lagarto", "spock"]
 const rules = {
   // Piedra gana a tijeras y a lagartija
-  rock: ['scissors', "lizard"],
+  piedra: ['tijeras', "lagarto"],
   // Papel gana a piedra y a Spock
-  paper: ["rock", "spock"],
+  papel: ["piedra", "spock"],
   // Tijeras gana a papel y a lagartija
-  scissors: ["paper", "lizard"],
+  tijeras: ["papel", "lagarto"],
   // Lagartija gana a Spock y a papel
-  lizard: ["spock", "paper"],
+  lagarto: ["spock", "papel"],
   // Spock gana a tijeras y a pieda
-  spock: ["scissors", "rock"]
+  spock: ["tijeras", "piedra"]
 }
 let computerChoise
 
@@ -41,33 +35,33 @@ const play = (userChoise) => {
 }
 
 document.getElementById("rock").addEventListener("click", function () {
-  document.getElementById("userChoise").innerHTML = "rock";
+  document.getElementById("userChoise").innerHTML = "piedra";
   randomChoise()
   document.getElementById("computerChoise").innerHTML = computerChoise;
-  play("rock")
+  play("piedra")
   document.getElementById("resultDiv").classList.remove("d-none")
 });
 
 document.getElementById("paper").addEventListener("click", function () {
-  document.getElementById("userChoise").innerHTML = "paper";
+  document.getElementById("userChoise").innerHTML = "papel";
   randomChoise()
-  play("paper")
+  play("papel")
   document.getElementById("computerChoise").innerHTML = computerChoise;
   document.getElementById("resultDiv").classList.remove("d-none")
 });
 
 document.getElementById("scissors").addEventListener("click", function () {
-  document.getElementById("userChoise").innerHTML = "scissors";
+  document.getElementById("userChoise").innerHTML = "tijeras";
   randomChoise()
-  play("scissors")
+  play("tijeras")
   document.getElementById("computerChoise").innerHTML = computerChoise;
   document.getElementById("resultDiv").classList.remove("d-none")
 });
 
 document.getElementById("lizard").addEventListener("click", function () {
-  document.getElementById("userChoise").innerHTML = "lizard";
+  document.getElementById("userChoise").innerHTML = "lagarto";
   randomChoise()
-  play("lizard")
+  play("lagarto")
   document.getElementById("computerChoise").innerHTML = computerChoise;
   document.getElementById("resultDiv").classList.remove("d-none")
 });
