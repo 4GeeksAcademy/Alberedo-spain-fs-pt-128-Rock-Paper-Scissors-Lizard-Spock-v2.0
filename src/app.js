@@ -1,5 +1,8 @@
 
+//Opciones posibles
 const choises = ["piedra", "papel", "tijeras", "lagarto", "spock"]
+
+//Reglas
 const rules = {
   // Piedra gana a tijeras y a lagartija
   piedra: ['tijeras', "lagarto"],
@@ -14,31 +17,36 @@ const rules = {
 }
 let computerChoise
 
+//Elige aleatoriamente una opción para el ordenador
 function randomChoise() {
   computerChoise = choises[Math.floor(Math.random() * choises.length)]
   console.log(`El ordenador ha elegido: ${computerChoise}`);
 }
 
+//Realiza comparación de elecciones entre usuario y ordenador
 const play = (userChoise) => {
   if (userChoise === computerChoise) {
-    console.log("Habeis tenido un empate! Vuelve a intentarlo");
     document.getElementById("result").innerHTML = "¡¡Empate!!  Pulsa otro botón para jugar la revancha";
   }
-  else if (rules[userChoise].includes(computerChoise)) {
-    console.log("Enhorabuena! Ganastes!")
+  if (rules[userChoise].includes(computerChoise)) {
     document.getElementById("result").innerHTML = "🎉¡¡Ganastes!! 🎉";
   }
   else {
-    console.log("Lo siento, has perdido...");
     document.getElementById("result").innerHTML = "💀¡¡Perdistes!!💀";
   }
 }
 
+//Añades el eventlistener para cuando haces click en 
 document.getElementById("rock").addEventListener("click", function () {
+  //Esribe piedra en la elección de usuario si pulsas piedra
   document.getElementById("userChoise").innerHTML = "piedra";
+  //Ejecuta la elección del ordenador random
   randomChoise()
+  //Escribe la elección de ordenador en pantralla
   document.getElementById("computerChoise").innerHTML = computerChoise;
+  //Ejecuta la comparación de elección de ordenador y usuario
   play("piedra")
+  //Oculta el parrafo de solución hasta que se pulsa el boton por primera vez
   document.getElementById("resultDiv").classList.remove("d-none")
 });
 
